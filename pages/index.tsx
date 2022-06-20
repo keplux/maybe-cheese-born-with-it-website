@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       <div className='px-2'>
         <div className='bg-white max-w-6xl mx-auto rounded-lg overflow-hidden shadow-lg border-2 border-black'>
           <div className='relative border-b-2 border-black'>
-            <div className='relative h-[75vh] max-w-7xl mx-auto px-4 sm:px-6'>
+            <div className='relative h-80 sm:h-[75vh] max-w-7xl mx-auto px-4 sm:px-6'>
               <Image
                 src='/images/the-team.jpg'
                 alt='The team'
