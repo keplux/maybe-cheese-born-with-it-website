@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <div className='relative shadow-lg py-16 sm:py-32'>
       <Seo
-        title='Maybe Cheese Born With It Food Truck | Seen on Food Network'
+        title='Maybe Cheese Born With It Food Truck | Toledo, OH'
         description="We are Toledo's first and only mac and cheese food truck, and Ohio's only Drag Queen food truck! Smother your guests in cheese at your event! (419) 245-8056"
         shareUrl='/images/sugar.jpg'
         url='https://www.maybecheesebornwithit.com'
