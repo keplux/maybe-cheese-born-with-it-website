@@ -1,9 +1,17 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Seo } from '../src';
 
 const Home: NextPage = () => {
   return (
-    <div className='relative shadow-lg py-32'>
+    <div className='relative shadow-lg py-16 sm:py-32'>
+      <Seo
+        title='Maybe Cheese Born With It Food Truck | Seen on Food Network'
+        description="We are Toledo's first and only mac and cheese food truck, and Ohio's only Drag Queen food truck! Smother your guests in cheese at your event! (419) 245-8056"
+        shareUrl='/images/sugar.jpg'
+        url='https://www.maybecheesebornwithit.com'
+      />
       <div className='px-2'>
         <div className='bg-white max-w-6xl mx-auto rounded-lg overflow-hidden shadow-lg border-2 border-black'>
           <div className='relative border-b-2 border-black'>
@@ -109,14 +117,14 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <section className='bg-yellow-400 mt-32 py-16 border-y-2 border-black'>
+      <section className='bg-yellow-400 mt-16 sm:mt-32 py-16 border-y-2 border-black'>
         <h2 className='text-center text-4xl font-handwriting font-bold'>
           Our Customers are
         </h2>
         <p className='font-display text-4xl text-center text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-pink-500 to-violet-500'>
           RAVING
         </p>
-        <div className='md:grid md:grid-cols-3'>
+        <div className='md:grid md:grid-cols-3 max-w-7xl mx-auto'>
           <div className='md:max-w-sm mx-auto px-4 py-6 sm:px-8 md:flex md:flex-col '>
             <blockquote className='mt-6 md:flex-grow md:flex md:flex-col'>
               <div className='relative md:flex-grow'>
@@ -185,25 +193,27 @@ const Home: NextPage = () => {
       </section>
 
       <div className='px-2'>
-        <div className='flex flex-col items-center mt-32 text-center bg-brand-500/50 backdrop-blur-md max-w-lg mx-auto px-8 py-8 sm:py-12 rounded-lg border-2 border-black'>
+        <div className='flex flex-col items-center mt-16 sm:mt-32 text-center bg-brand-500/50 backdrop-blur-md max-w-lg mx-auto px-8 py-8 sm:py-12 rounded-lg border-2 border-black'>
           <p className='text-3xl sm:text-4xl font-handwriting text-white font-bold'>
             Book Us for Your Event!
           </p>
-          <button className='mt-8 flex w-min items-center px-8 py-2 text-xl rounded-lg shadow-md font-semibold bg-yellow-400'>
-            <span>Contact</span>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='ml-4 h-5 w-5'
-              viewBox='0 0 20 20'
-              fill='currentColor'
-            >
-              <path
-                fillRule='evenodd'
-                d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z'
-                clipRule='evenodd'
-              />
-            </svg>
-          </button>
+          <Link href='/contact' passHref>
+            <button className='mt-8 flex w-min items-center px-8 py-2 text-xl rounded-lg shadow-md font-semibold bg-yellow-400 hover:bg-yellow-500 transition'>
+              <span>Contact</span>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='ml-4 h-5 w-5'
+                viewBox='0 0 20 20'
+                fill='currentColor'
+              >
+                <path
+                  fillRule='evenodd'
+                  d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z'
+                  clipRule='evenodd'
+                />
+              </svg>
+            </button>
+          </Link>
         </div>
       </div>
     </div>

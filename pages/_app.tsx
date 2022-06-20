@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           objectFit='cover'
         />
       </div>
-      <div className='relative flex justify-between pt-4'>
+      <div className='relative flex justify-between pt-4 max-w-7xl mx-auto'>
         <div className='absolute -bottom-4 left-0 z-0'>
           <Image
             src='/images/toledo-skyline.png'
