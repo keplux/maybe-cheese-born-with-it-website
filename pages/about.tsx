@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Seo } from '../src';
 
 const About = () => {
@@ -45,6 +46,30 @@ const About = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className='px-2'>
+        <div className='flex flex-col items-center mt-16 sm:mt-32 text-center bg-brand-500/50 backdrop-blur-md max-w-lg mx-auto px-8 py-8 sm:py-12 rounded-lg border-2 border-black'>
+          <p className='text-3xl sm:text-4xl font-handwriting text-white font-bold'>
+            Book Us for Your Event!
+          </p>
+          <Link href='/contact' passHref>
+            <button className='mt-8 flex w-min items-center px-8 py-2 text-xl rounded-lg shadow-md font-semibold bg-yellow-400 hover:bg-yellow-500 transition'>
+              <span>Contact</span>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='ml-4 h-5 w-5'
+                viewBox='0 0 20 20'
+                fill='currentColor'
+              >
+                <path
+                  fillRule='evenodd'
+                  d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z'
+                  clipRule='evenodd'
+                />
+              </svg>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
