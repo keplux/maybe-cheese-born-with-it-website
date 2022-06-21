@@ -56,8 +56,8 @@ const Contact = () => {
   return (
     <div>
       <Seo
-        title='Planning an event? Book the Sassiest Food Truck in Toledo!'
-        description="Toledo's only mac n cheese food truck and the midwest's FIRST EVER drag queen owned! We serve up gourmet loaded mac n cheese with sass, smiles, love, and cheese."
+        title="Planning an Event? We'll Bring the Cheese! | Toledo, OH"
+        description='Bring the sassiest food truck in toledo to your next event! Your guests will love our gooey mac and cheese truck! Book us or inquire today: (419) 245-8056.'
         shareUrl='/images/sugar.jpg'
         url='https://www.maybecheesebornwithit.com/contact'
       />
