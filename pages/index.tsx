@@ -21,6 +21,7 @@ const Home: NextPage = () => {
                 alt='The team'
                 layout='fill'
                 objectFit='cover'
+                priority
               />
             </div>
           </div>

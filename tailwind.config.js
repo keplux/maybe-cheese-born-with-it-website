@@ -13,8 +13,7 @@ module.exports = {
       fontFamily: {
         sans: ['Montserrat'],
         handwriting: ['"Nothing You Could Do"'],
-        cursive: ['Sacramento'],
-        display: ['"Train One"']
+        display: ['"Train One"'],
       },
     },
   },
