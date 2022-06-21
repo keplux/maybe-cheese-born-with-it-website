@@ -1,11 +1,24 @@
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import Script from 'next/script';
 import { Seo } from '../src';
 
 const Home: NextPage = () => {
   return (
     <div className='relative shadow-lg py-16 sm:py-32'>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+        strategy='afterInteractive'
+      />
+      <Script id='google-analytics' strategy='afterInteractive'>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
+        `}
+      </Script>
       <Seo
         title='Maybe Cheese Born With It Food Truck | Toledo, OH'
         description="We are Toledo's first and only mac and cheese food truck, and Ohio's only Drag Queen food truck! Smother your guests in cheese at your event! (419) 245-8056"
