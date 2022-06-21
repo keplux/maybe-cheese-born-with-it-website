@@ -14,8 +14,9 @@ const Home: NextPage = () => {
       <Script id='google-analytics' strategy='afterInteractive'>
         {`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
+
           gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
         `}
       </Script>
