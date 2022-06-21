@@ -209,7 +209,7 @@ const Contact = () => {
               <div className='sm:col-span-2'>
                 <button
                   type='submit'
-                  disabled={!isSubmitting}
+                  disabled={isSubmitting}
                   className={`cursor-pointer mt-8 flex justify-center w-full items-center px-8 py-2 text-xl rounded-lg shadow-md font-semibold transition ${
                     isSubmitting
                       ? 'bg-gray-400'
