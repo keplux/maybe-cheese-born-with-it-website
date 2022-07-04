@@ -2,10 +2,11 @@ import { SVGProps } from 'react';
 
 const navigation = {
   main: [
-    { name: 'Home', href: '/' },
-    { name: 'Menu', href: '/menu' },
-    { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/contact' },
+    { label: 'Home', href: '/' },
+    { label: 'Shop', href: 'https://shop.maybecheesebornwithit.com' },
+    { label: 'Menu', href: '/menu' },
+    { label: 'About', href: '/about' },
+    { label: 'Contact', href: '/contact' },
   ],
   social: [
     {
@@ -33,12 +34,12 @@ export const Footer = () => {
           aria-label='Footer'
         >
           {navigation.main.map((item) => (
-            <div key={item.name} className='px-5 py-2'>
+            <div key={item.label} className='px-5 py-2'>
               <a
                 href={item.href}
                 className='text-base text-black hover:text-gray-900'
               >
-                {item.name}
+                {item.label}
               </a>
             </div>
           ))}
