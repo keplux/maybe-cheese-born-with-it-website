@@ -3,10 +3,46 @@ import type { AppProps } from 'next/app';
 import { Footer, Navbar } from '../src';
 import Image from 'next/image';
 import Script from 'next/script';
+import { DefaultSeo } from 'next-seo';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className='bg-brand-900'>
+      <DefaultSeo
+        openGraph={{
+          type: 'website',
+          locale: 'en_US',
+          url: 'https://www.maybecheesebornwithit.com/',
+          site_name: 'Maybe Cheese Born With It | Toledo, OH',
+          images: [
+            {
+              url: '/images/sugar.jpg',
+              alt: 'Maybe Cheese Born With It Website',
+              type: 'image/jpg',
+            },
+          ],
+        }}
+        additionalLinkTags={[
+          {
+            rel: 'apple-touch-icon',
+            sizes: '180x180',
+            href: '/icons/apple-touch-icon.png',
+          },
+          {
+            rel: 'icon',
+            type: 'image/png',
+            sizes: '32x32',
+            href: '/icons/favicon-32x32.png',
+          },
+          {
+            rel: 'icon',
+            type: 'image/png',
+            sizes: '16x16',
+            href: '/icons/favicon-16x16.png',
+          },
+        ]}
+      />
+
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
         strategy='afterInteractive'

@@ -1,16 +1,15 @@
 import type { NextPage } from 'next';
+import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Seo } from '../src';
 
 const Home: NextPage = () => {
   return (
     <div className='relative shadow-lg py-16 sm:py-32'>
-      <Seo
+      <NextSeo
         title='Maybe Cheese Born With It Food Truck | Toledo, OH'
         description="We are Toledo's first and only mac and cheese food truck, and Ohio's only Drag Queen food truck! Smother your guests in cheese at your event! (419) 245-8056"
-        shareUrl='/images/sugar.jpg'
-        url='https://www.maybecheesebornwithit.com'
+        canonical='https://www.maybecheesebornwithit.com'
       />
       <div className='px-2'>
         <div className='bg-white max-w-6xl mx-auto rounded-lg overflow-hidden shadow-lg border-2 border-black'>
@@ -28,6 +27,9 @@ const Home: NextPage = () => {
           <div className='flex flex-col gap-16 py-16 px-4 max-w-4xl mx-auto sm:py-24 sm:px-6 lg:px-8'>
             <div>
               <div className='flex justify-center text-center'>
+                <h1 className='sr-only'>
+                  Toledo&apos;s First and Only Mac and Cheese Food Truck
+                </h1>
                 <p className='font-display text-yellow-500 text-4xl sm:text-6xl font-extrabold [text-shadow:_-2px_2px_0px_#CE5937]'>
                   CHEESE IS LOVE
                 </p>

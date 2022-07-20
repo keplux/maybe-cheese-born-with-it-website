@@ -1,23 +1,22 @@
+import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Seo } from '../src';
 
 const About = () => {
   return (
     <div className='relative py-16 sm:py-32 px-2'>
-      <Seo
+      <NextSeo
         title='Maybe Cheese Born With It Food Truck | Toledo, OH'
         description="This food truck is the embodiment of Toledo's favorite cheese (drag) queen, Sugar Vermonte. Learn more and book us for your upcoming event! (419) 245-8056"
-        shareUrl='/images/sugar.jpg'
-        url='https://www.maybecheesebornwithit.com/about'
+        canonical='https://www.maybecheesebornwithit.com/about'
       />
       <div className='bg-white max-w-6xl mx-auto rounded-lg overflow-hidden shadow-lg border-2 border-black'>
         <div className='flex flex-col gap-32 py-16 px-4 max-w-5xl mx-auto sm:py-24 sm:px-6 lg:px-8'>
           <div>
             <div className='flex justify-center text-center'>
-              <p className='font-display text-yellow-500 text-4xl sm:text-6xl font-extrabold [text-shadow:_-2px_2px_0px_#CE5937]'>
+              <h1 className='font-display text-yellow-500 text-4xl sm:text-6xl font-extrabold [text-shadow:_-2px_2px_0px_#CE5937]'>
                 ABOUT THE FOUNDER
-              </p>
+              </h1>
             </div>
             <div className='mt-8 grid grid-cols-1 gap-8 md:grid-cols-2'>
               <div className='grid grid-cols-1 gap-2'>

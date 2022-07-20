@@ -1,5 +1,5 @@
+import { NextSeo } from 'next-seo';
 import Link from 'next/link';
-import { Seo } from '../src';
 
 const MenuItem = ({
   name,
@@ -83,19 +83,18 @@ const Menu = () => {
 
   return (
     <div className='relative py-16 sm:py-32 px-2'>
-      <Seo
+      <NextSeo
         title='Serving the Sassiest Mac n Cheese at Your Event | Toledo, OH'
         description="Whether you're planning a wedding, birthday party, graduation party, or just need an excuse to eat mac and cheese, we're sure to be the best in Toledo!"
-        shareUrl='/images/sugar.jpg'
-        url='https://www.maybecheesebornwithit.com/menu'
+        canonical='https://www.maybecheesebornwithit.com/menu'
       />
       <div className='bg-white max-w-6xl mx-auto rounded-lg overflow-hidden shadow-lg border-2 border-black'>
         <div className='flex flex-col gap-32 py-16 px-4 max-w-5xl mx-auto sm:py-24 sm:px-6 lg:px-8'>
           <div>
             <div className='flex justify-center text-center'>
-              <p className='font-display text-yellow-500 text-4xl sm:text-6xl font-extrabold [text-shadow:_-2px_2px_0px_#CE5937]'>
+              <h1 className='font-display text-yellow-500 text-4xl sm:text-6xl font-extrabold [text-shadow:_-2px_2px_0px_#CE5937]'>
                 GET YOUR CHEESE ON
-              </p>
+              </h1>
             </div>
             <div className='mt-8 grid grid-cols-1 gap-20 md:grid-cols-2 ml-14 max-w-4xl mx-auto'>
               {menu.map((item) => {
