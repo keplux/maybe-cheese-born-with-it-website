@@ -1,6 +1,9 @@
 import { NextSeo } from 'next-seo';
 import { useState } from 'react';
 
+const inputStyle =
+  'py-3 px-4 block w-full shadow-sm hover:border-yellow-500 focus:ring-yellow-500 focus:border-yellow-500 transition duration-200 caret-yellow-500 border border-black rounded-md';
+
 const Contact = () => {
   const [data, setData] = useState({
     firstName: '',
@@ -62,7 +65,7 @@ const Contact = () => {
       />
       <div className='relative py-16'>
         <div className='px-2'>
-          <div className='py-16 px-4 max-w-3xl sm:px-6 lg:px-8 lg:py-24 bg-white mx-auto rounded-t-lg overflow-hidden shadow-lg border-x-2 border-t-2 border-black'>
+          <div className='py-16 px-4 max-w-3xl sm:px-6 lg:px-8 bg-white mx-auto rounded-t-lg overflow-hidden shadow-lg border-x-2 border-t-2 border-black'>
             <div className='relative max-w-xl mx-auto'>
               <div className='flex justify-center text-center'>
                 <h1 className='font-display text-yellow-500 text-4xl sm:text-6xl font-extrabold [text-shadow:_-2px_2px_0px_#CE5937]'>
@@ -115,7 +118,7 @@ const Contact = () => {
           </div>
         </div>
         <div className='px-2'>
-          <div className='py-16 px-4 max-w-3xl sm:px-6 lg:px-8 lg:py-24 bg-white mx-auto rounded-b-lg overflow-hidden shadow-lg border-x-2 border-b-2 border-black'>
+          <div className='py-16 px-4 max-w-3xl sm:px-6 lg:px-8 bg-white mx-auto rounded-b-lg overflow-hidden shadow-lg border-x-2 border-b-2 border-black'>
             <form
               onSubmit={handleSubmit}
               method='POST'
@@ -132,7 +135,7 @@ const Contact = () => {
                     value={data.firstName}
                     id='firstName'
                     autoComplete='given-name'
-                    className='py-3 px-4 block w-full shadow-sm focus:ring-yellow-500 focus:border-yellow-500 border border-black rounded-md'
+                    className={inputStyle}
                     onChange={handleChange}
                     required
                   />
@@ -149,7 +152,7 @@ const Contact = () => {
                     value={data.lastName}
                     id='lastName'
                     autoComplete='family-name'
-                    className='py-3 px-4 block w-full shadow-sm focus:ring-yellow-500 focus:border-yellow-500 border border-black rounded-md'
+                    className={inputStyle}
                     onChange={handleChange}
                     required
                   />
@@ -166,7 +169,7 @@ const Contact = () => {
                     value={data.email}
                     type='email'
                     autoComplete='email'
-                    className='py-3 px-4 block w-full shadow-sm focus:ring-yellow-500 focus:border-yellow-500 border border-black rounded-md'
+                    className={inputStyle}
                     onChange={handleChange}
                     required
                   />
@@ -183,7 +186,7 @@ const Contact = () => {
                     value={data.phone}
                     type='tel'
                     autoComplete='phone'
-                    className='py-3 px-4 block w-full shadow-sm focus:ring-yellow-500 focus:border-yellow-500 border border-black rounded-md'
+                    className={inputStyle}
                     onChange={handleChange}
                   />
                 </div>
