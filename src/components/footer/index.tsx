@@ -3,7 +3,6 @@ import { SVGProps } from 'react';
 const navigation = {
   main: [
     { label: 'Home', href: '/' },
-    { label: 'Shop', href: 'https://shop.maybecheesebornwithit.com' },
     { label: 'Menu', href: '/menu' },
     { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },

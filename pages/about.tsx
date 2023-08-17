@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const About = () => {
   return (
-    <div className='relative py-16 sm:py-32 px-2'>
+    <div className='relative py-16 px-2'>
       <NextSeo
         title='Maybe Cheese Born With It Food Truck | Toledo, OH'
         description="This food truck is the embodiment of Toledo's favorite cheese (drag) queen, Sugar Vermonte. Learn more and book us for your upcoming event! (419) 245-8056"

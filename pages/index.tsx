@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Home: NextPage = () => {
   return (
-    <div className='relative shadow-lg py-16 sm:py-32'>
+    <div className='relative shadow-lg py-16'>
       <NextSeo
         title='Maybe Cheese Born With It Food Truck | Toledo, OH'
         description="We are Toledo's first and only mac and cheese food truck, and Ohio's only Drag Queen food truck! Smother your guests in cheese at your event! (419) 245-8056"

@@ -60,7 +60,7 @@ const Contact = () => {
         description='Bring the sassiest food truck in toledo to your next event! Your guests will love our gooey mac and cheese truck! Book us or inquire today: (419) 245-8056.'
         canonical='https://www.maybecheesebornwithit.com/contact'
       />
-      <div className='relative py-16 sm:py-32'>
+      <div className='relative py-16'>
         <div className='px-2'>
           <div className='py-16 px-4 max-w-3xl sm:px-6 lg:px-8 lg:py-24 bg-white mx-auto rounded-t-lg overflow-hidden shadow-lg border-x-2 border-t-2 border-black'>
             <div className='relative max-w-xl mx-auto'>

@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 
 const navItems = [
   { label: 'Home', href: '/' },
-  { label: 'Shop', href: 'https://shop.maybecheesebornwithit.com' },
   { label: 'Menu', href: '/menu' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },

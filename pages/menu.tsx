@@ -82,7 +82,7 @@ const Menu = () => {
   ];
 
   return (
-    <div className='relative py-16 sm:py-32 px-2'>
+    <div className='relative py-16 px-2'>
       <NextSeo
         title='Serving the Sassiest Mac n Cheese at Your Event | Toledo, OH'
         description="Whether you're planning a wedding, birthday party, graduation party, or just need an excuse to eat mac and cheese, we're sure to be the best in Toledo!"
