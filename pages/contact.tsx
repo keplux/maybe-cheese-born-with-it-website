@@ -18,7 +18,7 @@ const resolver = z.object({
   firstName: z.string().min(1, 'Required'),
   lastName: z.string(),
   email: z.string().min(1, 'Required').email('Invalid email'),
-  phone: z.string().min(10, 'Must be 10 digits').max(10, 'Must be 10 digits'),
+  phone: z.string(),
   message: z.string().min(32, 'Please add more details'),
 });
 
