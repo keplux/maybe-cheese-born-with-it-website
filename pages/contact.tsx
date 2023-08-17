@@ -26,6 +26,7 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { isSubmitting, errors },
   } = useForm<ContactFormData>({
     defaultValues: {
@@ -51,7 +52,9 @@ const Contact = () => {
       }),
     });
 
-    const response = await res.json();
+    await res.json();
+
+    reset();
   };
 
   return (
