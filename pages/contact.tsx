@@ -1,32 +1,44 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import { NextSeo } from 'next-seo';
-import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
 const inputStyle =
   'py-3 px-4 block w-full shadow-sm hover:border-yellow-500 focus:ring-yellow-500 focus:border-yellow-500 transition duration-200 caret-yellow-500 border border-black rounded-md';
 
+type ContactFormData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  message: string;
+};
+
+const resolver = z.object({
+  firstName: z.string().min(1, 'Required'),
+  lastName: z.string(),
+  email: z.string().min(1, 'Required').email('Invalid email'),
+  phone: z.string().min(10, 'Must be 10 digits').max(10, 'Must be 10 digits'),
+  message: z.string().min(32, 'Please add more details'),
+});
+
 const Contact = () => {
-  const [data, setData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: '',
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting, errors },
+  } = useForm<ContactFormData>({
+    defaultValues: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      message: '',
+    },
+    resolver: zodResolver(resolver),
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState(false);
 
-  const handleChange = (e: { target: { name: any; value: any } }) => {
-    const { name, value } = e.target;
-    setData({
-      ...data,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
+  const onSubmit = async (data: ContactFormData) => {
     const res = await fetch('/api/submitContactForm', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -40,22 +52,8 @@ const Contact = () => {
     });
 
     const response = await res.json();
-
-    if (response.message === 'success') {
-      setError(false);
-      setData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        message: '',
-      });
-    } else {
-      setError(true);
-    }
-
-    setIsSubmitting(false);
   };
+
   return (
     <div>
       <NextSeo
@@ -120,7 +118,7 @@ const Contact = () => {
         <div className='px-2'>
           <div className='py-16 px-4 max-w-3xl sm:px-6 lg:px-8 bg-white mx-auto rounded-b-lg overflow-hidden shadow-lg border-x-2 border-b-2 border-black'>
             <form
-              onSubmit={handleSubmit}
+              onSubmit={handleSubmit(onSubmit)}
               method='POST'
               className='grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8'
             >
@@ -131,14 +129,17 @@ const Contact = () => {
                 <div className='mt-1'>
                   <input
                     type='text'
-                    name='firstName'
-                    value={data.firstName}
-                    id='firstName'
                     autoComplete='given-name'
-                    className={inputStyle}
-                    onChange={handleChange}
-                    required
+                    className={`${inputStyle} ${
+                      errors.firstName && 'border-red-500'
+                    }`}
+                    {...register('firstName')}
                   />
+                  {errors.firstName && (
+                    <p className='mt-1 text-xs text-red-500 italic'>
+                      {errors.firstName.message}
+                    </p>
+                  )}
                 </div>
               </div>
               <div>
@@ -148,14 +149,17 @@ const Contact = () => {
                 <div className='mt-1'>
                   <input
                     type='text'
-                    name='lastName'
-                    value={data.lastName}
-                    id='lastName'
                     autoComplete='family-name'
-                    className={inputStyle}
-                    onChange={handleChange}
-                    required
+                    className={`${inputStyle} ${
+                      errors.lastName && 'border-red-500'
+                    }`}
+                    {...register('lastName')}
                   />
+                  {errors.lastName && (
+                    <p className='mt-1 text-xs text-red-500 italic'>
+                      {errors.lastName.message}
+                    </p>
+                  )}
                 </div>
               </div>
               <div className='sm:col-span-2'>
@@ -164,15 +168,18 @@ const Contact = () => {
                 </label>
                 <div className='mt-1'>
                   <input
-                    id='email'
-                    name='email'
-                    value={data.email}
                     type='email'
                     autoComplete='email'
-                    className={inputStyle}
-                    onChange={handleChange}
-                    required
+                    className={`${inputStyle} ${
+                      errors.email && 'border-red-500'
+                    }`}
+                    {...register('email')}
                   />
+                  {errors.email && (
+                    <p className='mt-1 text-xs text-red-500 italic'>
+                      {errors.email.message}
+                    </p>
+                  )}
                 </div>
               </div>
               <div className='sm:col-span-2'>
@@ -181,14 +188,18 @@ const Contact = () => {
                 </label>
                 <div className='mt-1'>
                   <input
-                    id='phone'
-                    name='phone'
-                    value={data.phone}
                     type='tel'
                     autoComplete='phone'
-                    className={inputStyle}
-                    onChange={handleChange}
+                    className={`${inputStyle} ${
+                      errors.phone && 'border-red-500'
+                    }`}
+                    {...register('phone')}
                   />
+                  {errors.phone && (
+                    <p className='mt-1 text-xs text-red-500 italic'>
+                      {errors.phone.message}
+                    </p>
+                  )}
                 </div>
               </div>
               <div className='sm:col-span-2'>
@@ -197,15 +208,17 @@ const Contact = () => {
                 </label>
                 <div className='mt-1'>
                   <textarea
-                    id='message'
-                    name='message'
-                    value={data.message}
                     rows={4}
-                    className='py-3 px-4 block w-full shadow-sm focus:ring-yellow-500 focus:border-yellow-500 border border-black rounded-md resize-none'
-                    defaultValue={''}
-                    onChange={handleChange}
-                    required
+                    className={`${inputStyle} ${
+                      errors.message && 'border-red-500'
+                    }`}
+                    {...register('message')}
                   />
+                  {errors.message && (
+                    <p className='mt-1 text-xs text-red-500 italic'>
+                      {errors.message.message}
+                    </p>
+                  )}
                 </div>
               </div>
               <div className='sm:col-span-2'>
